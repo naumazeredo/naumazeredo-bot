@@ -7,6 +7,7 @@ import logging
 import dataset
 from telegram import *
 from telegram.ext import *
+from emoji import emojize
 
 logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -180,7 +181,7 @@ def conceito(bot, update, args):
         user['rank'] += delta
         conceitos.update(user, ['id'])
 
-        print user
+        print(user)
 
         markup = rank_markup(user['rank'])
 
@@ -246,7 +247,7 @@ def main():
 
     dispatcher.add_handler(unknown_handler)
 
-    print "Melhor bot da fase da Terra está rodando em 3... 2... 1..."
+    print("Melhor bot da fase da Terra está rodando em 3... 2... 1...")
 
     updater.start_polling()
 
